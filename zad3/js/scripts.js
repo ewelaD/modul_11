@@ -54,10 +54,10 @@ $(function(){
 		$card.append($cardDelete)
 			.append($cardDescription);
 		return $card;
+		}
 		Card.prototype = {
 		removeCard: function() {
 			this.$element.remove();
-			}
 			}
 		}
 	};
