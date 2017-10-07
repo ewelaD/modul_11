@@ -55,19 +55,19 @@ $(function(){
 				.append($cardDescription);
 			return $card;
 		}
-		Card.prototype = {
+	};
+	Card.prototype = {
 			removeCard: function() {
 				this.$element.remove();
 			}
 		}
-	};
 	var board = {
 		name: 'Kanban Board',
 		addColumn: function(column) {
 			this.$element.append(column.$element);
 			initSortable();
 		},
-		$element: $('#board .column-container')
+		$element: $('#board .js-column-container')
 	};
 	function initSortable() {
 		$('.column-card-list').sortable({
@@ -75,7 +75,7 @@ $(function(){
 			placeholder: 'card-placeholder'
 		}).disableSelection();
 	};
-	$('.create-column').click(function(){
+	$('.js-create-column').click(function(){
 		var name = prompt('Enter a column name');
 		var column = new Column(name);
 			board.addColumn(column);
